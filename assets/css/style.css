@@ -18,7 +18,7 @@ body{
 }
 #index #header{
 	margin-top: 8em;
-	margin-bottom: 8em;
+	margin-bottom: 4em;
 }
 
 #index #header .logo{
@@ -32,18 +32,35 @@ body{
 	margin: 0;
 }
 
-/* Sign Up Section*/
+/* Sign In Section*/
 input[type=password]:not(.browser-default), 
 input[type=email]:not(.browser-default){
 	background-color: white;
+	border-bottom: 1px solid #d2d1d1;
 	margin: 0;
-	padding: .5em 0 .5em 4em;
+	height: 54px;
 }
 
-i{
+#index input::placeholder{
+	padding-left: 4em;
+}
+
+#index i{
 	margin-left: .5em;
 }
 
 .btn-large{
-	width: 123%;
+	width: 100%;
+}
+
+#index a{
+	color: white;
+}
+#index a:hover{
+	text-decoration: underline;
+}
+
+#index .sign-up{
+	color: #ff8f00;
+	font-weight: 700;
 }
