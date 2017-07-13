@@ -4,7 +4,13 @@ body{
 	margin: 0;
 }
 
-/* INDEX */
+a{
+	color: white;
+}
+a:hover{
+	text-decoration: underline;
+}
+
 .mb-0{
 	margin-bottom: 0;
 }
@@ -12,7 +18,9 @@ body{
 	margin-top: 0;
 }
 
-/* Header */
+/* INDEX */
+
+/* INDEX Header */
 #index{
 	background-color: 
 }
@@ -32,7 +40,7 @@ body{
 	margin: 0;
 }
 
-/* Sign In Section*/
+/* INDEX Sign In Section*/
 input[type=password]:not(.browser-default), 
 input[type=email]:not(.browser-default){
 	background-color: white;
@@ -53,14 +61,26 @@ input[type=email]:not(.browser-default){
 	width: 100%;
 }
 
-#index a{
-	color: white;
-}
-#index a:hover{
-	text-decoration: underline;
-}
-
 #index .sign-up{
 	color: #ff8f00;
 	font-weight: 700;
+}
+
+/* HOME */
+
+/* HOME Header */
+#home a:hover{
+	text-decoration: none;
+}
+
+/* HOME Section */
+#options{
+	margin-top: 10em;
+}
+#options a{
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+#options .btn-large{
+	font-size: 1.3rem;
 }
