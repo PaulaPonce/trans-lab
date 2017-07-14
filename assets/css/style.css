@@ -11,6 +11,10 @@ a:hover{
 	text-decoration: underline;
 }
 
+.menu:hover{
+	text-decoration: none;
+}
+
 .mb-0{
 	margin-bottom: 0;
 }
@@ -68,11 +72,6 @@ input[type=email]:not(.browser-default){
 
 /* HOME */
 
-/* HOME Header */
-#home a:hover{
-	text-decoration: none;
-}
-
 /* HOME Section */
 #options{
 	margin-top: 10em;
@@ -91,4 +90,18 @@ input[type=email]:not(.browser-default){
 .side-nav{
 	width: 260px;
 	padding-top: 2em;
+}
+
+/* PROFILE */
+#profile img{
+	width: 50%;
+	padding: 2em 0;
+}
+
+/* PROFILE Add Cards Section */
+#add-card{
+	margin-top: 3em;
+}
+.email{
+	padding: .5em 4em;
 }
