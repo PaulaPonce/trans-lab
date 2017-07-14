@@ -114,8 +114,18 @@ h3{
 	background-color: #ffa000;
 }
 
+/* BALANCE CHECK */
+#check{
+	margin-top: 2em;
+}
+
+select{
+	display: inline-block;
+}
+
 /* SIDENAV */
 .side-nav{
 	width: 260px;
 	padding-top: 2em;
 }
+
