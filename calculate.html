@@ -45,7 +45,7 @@
 				<div class="row">
 					<div class="input-field col s6">
 						<span>Tarifa</span>
-						<select>
+						<select id="fare">
 							<option value="0" selected>Choose your option</option>
 							<option value="740">Horario Alto: $740</option>
 							<option value="680">Horario Medio: $680</option>
@@ -54,23 +54,28 @@
 					</div>
 					<div class="input-field col s6">
 						<span>Tarjeta</span>
-						<select>
+						<select id="select-card">
 							<option value="0" selected>Choose your option</option>
-							<option value="1">Option 1</option>
-							<option value="2">Option 2</option>
-							<option value="3">Option 3</option>
+							
 						</select>
 					</div>
 				</div>
 				<div class="row center-align">
 					<div class="col s12">
-						<button class="btn amber darken-2 white-text" type="submit" name="action">Calcular</button>
+						<button id="calculate-fare" class="btn amber darken-2 white-text" type="button" name="action">Calcular</button>
 					</div>
 				</div>
 			</form>
 		</div>
-		<div class="price-container">
-			
+		<div class="row center-align">
+			<div id="fare-container" class="col s12 white-text">
+				
+			</div>
+		</div>
+		<div class="row center-align">
+			<div id="price-container" class="col s12 white-text">
+				
+			</div>
 		</div>
 	</section>
 	<!-- SideNav-->

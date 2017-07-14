@@ -88,6 +88,36 @@ $(document).ready(function(){
 		}
 	}
 
+	//CALCULATE BUS FARE
+	$("#calculate-fare").on("click", calculate);
+
+	function calculate(){
+		var fare = $("#fare option:selected").val(); //bus fare
+		var bipNumber = $("#select-card option:selected").val(); //card number
+
+		if(fare != 0 && bipNumber != 0){
+			$.ajax({
+			url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?',
+			type: 'GET',
+			dataType: 'json',
+			data: {bip: bipNumber},
+			})
+			.done(function(response) {
+				console.log("success");
+				$("#fare-container").append("<h6 class='grey darken-3'>COSTO PASAJE</h6><p class='amber darken-2'>$" + fare + "</p>");
+				$("#price-container").append("<h6 class='grey darken-3'>SALDO FINAL</h6><p class='amber darken-2'>$" + ((response.saldoTarjeta.slice(1).replace(".", "")) - fare) + "</p>");
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+		}else{
+			alert("Debe seleccionar una opción");
+		}
+	}
+
 	//function to clear inputs
 	function clear(){
 		$(":input").val("")

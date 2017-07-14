@@ -131,14 +131,22 @@ select{
 	display: inline-block;
 }
 
-#balance-container{
+#balance-container, 
+#fare-container{
 	margin-top: 4em;
 }
-#balance-container h6{
+#price-container{
+	margin-top: 2em;
+}
+#balance-container h6, 
+#fare-container h6, 
+#price-container h6{
 	margin: 0;
 	padding: .5em 2em;
 }
-#balance-container p{
+#balance-container p, 
+#fare-container p, 
+#price-container p {
 	font-size: 2em;
 	font-weight: 700;
 	margin: 0;
