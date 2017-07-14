@@ -131,6 +131,20 @@ select{
 	display: inline-block;
 }
 
+#balance-container{
+	margin-top: 4em;
+}
+#balance-container h6{
+	margin: 0;
+	padding: .5em 2em;
+}
+#balance-container p{
+	font-size: 2em;
+	font-weight: 700;
+	margin: 0;
+	padding: 1em;
+}
+
 /* SIDENAV */
 .side-nav{
 	width: 260px;

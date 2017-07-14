@@ -41,19 +41,54 @@ $(document).ready(function(){
 		
 	}
 
-function clear(){
+	//BIP CARD BALANCE CHECK
+	$("#check-balance").on("click", checkCardBalance);
+
+	function checkCardBalance(){
+		var bipNumberSelect = $("#select-card option:selected").val(); //select
+		var bipNumberInput = $("#card-number").val(); //input
+
+		if(!$("#select-card option:selected").val(0)){ //Select value Card Balance
+			$.ajax({
+			url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?',
+			type: 'GET',
+			dataType: 'json',
+			data: {bip: bipNumberSelect},
+			})
+			.done(function(response) {
+				console.log("success");
+				$("#balance-container").append("<h6 class='grey darken-3'>SALDO TOTAL</h6><p class='amber darken-2'>" + response.saldoTarjeta + "</p>")
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+		}else if(bipNumberInput != ""){ //Input value Card Balance
+			$.ajax({
+			url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?',
+			type: 'GET',
+			dataType: 'json',
+			data: {bip: bipNumberInput},
+			})
+			.done(function(response) {
+				console.log("success");
+				$("#balance-container").append("<h6 class='grey darken-3'>SALDO TOTAL</h6><p class='amber darken-2'>" + response.saldoTarjeta + "</p>")
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+		}
+	}
+
+	//function to clear inputs
+	function clear(){
 		$(":input").val("")
 	}
-	
-
-	/*
-//Balance check
-	$("#check-balance").on("click", checkCardBalance);
-	function checkCardBalance(){
-		cardNumber = $("#card-number").val();
-		
-	}
-	*/
 })
 
 //LOCAL STORAGE
@@ -71,7 +106,8 @@ function saveSettings(){
 //Card number storage
 function loadCardNumber(){
 	//add cards to select on balance-check.html
-	$("#select-card").append("<option value='" + localStorage.card + "'>card</option>"); //añade al select solo el último número de tarjeta ingresado en el input 
+	$("#select-card").append("<option value='" + localStorage.card + "'>" + localStorage.card + "</option>"); //añade al select solo el último número de tarjeta ingresado en el input
+}
 function saveCardNumber(){
 	localStorage.card = $("#card-number").val();
 }
