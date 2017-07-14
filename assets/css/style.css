@@ -25,9 +25,6 @@ a:hover{
 /* INDEX */
 
 /* INDEX Header */
-#index{
-	background-color: 
-}
 #index #header{
 	margin-top: 8em;
 	margin-bottom: 4em;
@@ -68,6 +65,12 @@ input[type=email]:not(.browser-default){
 #index .sign-up{
 	color: #ff8f00;
 	font-weight: 700;
+}
+
+.alert-label{
+	background-color: rgba(66, 66, 66, .7);
+	margin-left: 5em;
+	padding: .5em;
 }
 
 /* HOME */
