@@ -48,16 +48,17 @@ $(document).ready(function(){
 		var bipNumberSelect = $("#select-card option:selected").val(); //select
 		var bipNumberInput = $("#card-number").val(); //input
 
-		if(!$("#select-card option:selected").val(0)){ //Select value Card Balance
+		if(bipNumberSelect != 0){ //Select value Card Balance
+			//$("#card-number").attr('disabled');
 			$.ajax({
 			url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?',
 			type: 'GET',
 			dataType: 'json',
 			data: {bip: bipNumberSelect},
 			})
-			.done(function(response) {
+			.done(function(response1) {
 				console.log("success");
-				$("#balance-container").append("<h6 class='grey darken-3'>SALDO TOTAL</h6><p class='amber darken-2'>" + response.saldoTarjeta + "</p>")
+				$("#balance-container").append("<h6 class='grey darken-3'>SALDO TOTAL</h6><p class='amber darken-2'>" + response1.saldoTarjeta + "</p>")
 			})
 			.fail(function() {
 				console.log("error");
@@ -72,9 +73,9 @@ $(document).ready(function(){
 			dataType: 'json',
 			data: {bip: bipNumberInput},
 			})
-			.done(function(response) {
+			.done(function(response2) {
 				console.log("success");
-				$("#balance-container").append("<h6 class='grey darken-3'>SALDO TOTAL</h6><p class='amber darken-2'>" + response.saldoTarjeta + "</p>")
+				$("#balance-container").append("<h6 class='grey darken-3'>SALDO TOTAL</h6><p class='amber darken-2'>" + response2.saldoTarjeta + "</p>")
 			})
 			.fail(function() {
 				console.log("error");
@@ -82,6 +83,8 @@ $(document).ready(function(){
 			.always(function() {
 				console.log("complete");
 			});
+		}else{
+			alert("Debe ingresar el número de su tarjeta Bip!");
 		}
 	}
 
