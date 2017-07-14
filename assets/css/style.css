@@ -99,8 +99,13 @@ input[type=email]:not(.browser-default){
 #add-card{
 	margin-top: 3em;
 }
+
 .email{
 	padding: .5em 4em;
+}
+
+.collection .collection-item{
+	margin-bottom: 1em;
 }
 
 /* FAQs */

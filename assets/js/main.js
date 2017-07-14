@@ -5,8 +5,6 @@ $(document).ready(function(){
 	//Initialize SideNav
 	$("#activate-sideNav").sideNav();
 
-	
-
 	//Index validation
 	$("#sign-in").on("click", validateForm);
 	var email;
@@ -16,6 +14,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		email = $("#email").val();
 		pass = $("#pass").val();
+
 		if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
 			$(".email-container").append("<label class='alert-label'>Verifique su email</label>");
 		}else if(!/[0-9]/.test(pass) || pass.length >= 8){
@@ -24,25 +23,28 @@ $(document).ready(function(){
 			window.location.href="home.html";
 			saveSettings();
 		}
-		//clear();
 	}
-	//limpiar campos
-	/*
-	function clear(){
-		$(":input")
-		.not(":button, :submit, :reset, :hidden")
-		.val("")
-	}*/
 
-	
+	//Add Card
+	$("#addCard-btn").on("click", addCard);
+	var cardNumber;
+
+	function addCard(){
+		cardNumber = $("#card-number").val();
+		$(".collection").append("<li class='collection-item left-align'>" + cardNumber + "</li>");
+		clear();
+	}
+	function clear(){
+		$(":input").val("")
+	}
 })
 
 //localStorage
-function loadSettings() {
+function loadSettings(){
 	$("#index-email").append("<span class='email white'>" + localStorage.email + "</span>");
 	//$("#email").val(localStorage.correo);
 }
 
-function saveSettings() {
+function saveSettings(){
 	localStorage.email = $("#email").val();
 }
