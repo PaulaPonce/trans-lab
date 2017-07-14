@@ -51,7 +51,7 @@ $(document).ready(function(){
 		if(bipNumberSelect != 0){ //Select value Card Balance
 			//$("#card-number").attr('disabled');
 			$.ajax({
-			url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?',
+			url: 'https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?',
 			type: 'GET',
 			dataType: 'json',
 			data: {bip: bipNumberSelect},
@@ -68,7 +68,7 @@ $(document).ready(function(){
 			});
 		}else if(bipNumberInput != ""){ //Input value Card Balance
 			$.ajax({
-			url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?',
+			url: 'https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?',
 			type: 'GET',
 			dataType: 'json',
 			data: {bip: bipNumberInput},
@@ -97,7 +97,7 @@ $(document).ready(function(){
 
 		if(fare != 0 && bipNumber != 0){
 			$.ajax({
-			url: 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?',
+			url: 'https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?',
 			type: 'GET',
 			dataType: 'json',
 			data: {bip: bipNumber},
