@@ -86,12 +86,6 @@ input[type=email]:not(.browser-default){
 	font-size: 1.3rem;
 }
 
-/* HOME SideNav */
-.side-nav{
-	width: 260px;
-	padding-top: 2em;
-}
-
 /* PROFILE */
 #profile img{
 	width: 50%;
@@ -104,4 +98,24 @@ input[type=email]:not(.browser-default){
 }
 .email{
 	padding: .5em 4em;
+}
+
+/* FAQs */
+h3{
+	font-size: 2em;
+	margin: 3em 2em;
+}
+
+.collapsible-body{
+	border: 1px solid #ffa000;
+}
+.collapsible-header.active{
+	color: white;
+	background-color: #ffa000;
+}
+
+/* SIDENAV */
+.side-nav{
+	width: 260px;
+	padding-top: 2em;
 }
