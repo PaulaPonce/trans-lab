@@ -77,10 +77,18 @@ input[type=email]:not(.browser-default){
 #options{
 	margin-top: 10em;
 }
+
 #options a{
 	margin-top: .5em;
 	margin-bottom: .5em;
 }
+
 #options .btn-large{
 	font-size: 1.3rem;
+}
+
+/* HOME SideNav */
+.side-nav{
+	width: 260px;
+	padding-top: 2em;
 }

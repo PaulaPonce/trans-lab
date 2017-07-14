@@ -1,1 +1,4 @@
-/* Holiii acá va tu código también */
+$(document).ready(function(){
+	//Initialize SideNav
+	$("#activate-sideNav").sideNav();
+})
