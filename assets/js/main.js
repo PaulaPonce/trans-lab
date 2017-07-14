@@ -1,14 +1,15 @@
 $(document).ready(function(){
-	//localStorage
+	//Local Storage
 	loadSettings();
+	loadCardNumber();
 
 	//Initialize SideNav
 	$("#activate-sideNav").sideNav();
 
-	//Index validation
+	//INDEX VALIDATION
 	$("#sign-in").on("click", validateForm);
-	var email;
-	var pass;
+	var email; //input email
+	var pass; //input password
 
 	function validateForm(event){
 		event.preventDefault();
@@ -21,30 +22,56 @@ $(document).ready(function(){
 			$(".password-container").append("<label class='alert-label'>Máximo 8 caracteres. Solo se permiten números</label>");
 		}else{
 			window.location.href="home.html";
-			saveSettings();
+			saveSettings(); //localStorage
 		}
 	}
 
-	//Add Card
+	//ADD CARD NUMBER
 	$("#addCard-btn").on("click", addCard);
-	var cardNumber;
+	var cardNumber; //input card number
+	var idCounter = 1; //li element id
 
 	function addCard(){
 		cardNumber = $("#card-number").val();
-		$(".collection").append("<li class='collection-item left-align'>" + cardNumber + "</li>");
-		clear();
+		//add cards to list on profile.html
+		$(".collection").append("<li id='card-" + idCounter + "' class='collection-item left-align'>" + cardNumber + "</li>");
+		idCounter ++;
+		saveCardNumber(); //localStorage
+		clear(); //clear input
+		
 	}
-	function clear(){
+
+function clear(){
 		$(":input").val("")
 	}
+	
+
+	/*
+//Balance check
+	$("#check-balance").on("click", checkCardBalance);
+	function checkCardBalance(){
+		cardNumber = $("#card-number").val();
+		
+	}
+	*/
 })
 
-//localStorage
+//LOCAL STORAGE
+
+//Email storage
 function loadSettings(){
+	//add email to profile.html
 	$("#index-email").append("<span class='email white'>" + localStorage.email + "</span>");
 	//$("#email").val(localStorage.correo);
 }
-
 function saveSettings(){
 	localStorage.email = $("#email").val();
+}
+
+//Card number storage
+function loadCardNumber(){
+	//add cards to select on balance-check.html
+	$("#select-card").append("<option value='" + localStorage.card + "'>card</option>"); //añade al select solo el último número de tarjeta ingresado en el input 
+function saveCardNumber(){
+	localStorage.card = $("#card-number").val();
 }
