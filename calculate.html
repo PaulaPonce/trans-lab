@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Trans Lab</title>
+	<!-- Viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- Favicon -->
+	<link rel="icon"
+      type="image/ico"
+      href="assets/img/favicon.ico">
+	<!-- Materialize Icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
+	<!-- CDN Materialize CSS-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	<!-- main.css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body id="balance-check" class="grey lighten-2">
+	<!-- Header -->
+	<header>
+		<nav class="grey darken-3">
+			<div class="nav-wrapper">
+				<a href="#" class="white-text brand-logo center">TRANS-LAB</a>
+				<ul id="nav-mobile" class="left">
+					<li>
+						<a href="#" id="activate-sideNav" data-activates="slide-out" class="menu"><i class="material-icons">menu</i></a>
+					</li>
+				</ul>
+			</div>
+		</nav>	
+	</header>
+	<!--  Calculate Section -->
+	<section id="check" class="container">
+		<div class="row">
+			<form class="col s12">
+				<div class="row mb-0">
+					<div class="input-field col s12">
+						<input id="card-number" type="number" class="validate" placeholder="Número tarjeta">
+						<label for="card-number"></label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<span>Tarifa</span>
+						<select>
+							<option value="0" selected>Choose your option</option>
+							<option value="740">Horario Alto: $740</option>
+							<option value="680">Horario Medio: $680</option>
+							<option value="640">Horario Bajo: $640</option>
+						</select>
+					</div>
+					<div class="input-field col s6">
+						<span>Tarjeta</span>
+						<select>
+							<option value="0" selected>Choose your option</option>
+							<option value="1">Option 1</option>
+							<option value="2">Option 2</option>
+							<option value="3">Option 3</option>
+						</select>
+					</div>
+				</div>
+				<div class="row center-align">
+					<div class="col s12">
+						<button class="btn amber darken-2 white-text" type="submit" name="action">Calcular</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="price-container">
+			
+		</div>
+	</section>
+	<!-- SideNav-->
+	<ul id="slide-out" class="side-nav">
+		<li>
+			<a href="#!"><i class="material-icons amber-text text-darken-2">attach_money</i>Ver Saldo</a>
+		</li>
+		<li>
+			<a href="#!"><i class="material-icons amber-text text-darken-2">apps</i>Calcular Tarifa</a>
+		</li>
+		<li>
+			<a href="#!"><i class="material-icons amber-text text-darken-2">person</i>Perfil</a>
+		</li>
+		<li>
+			<a href="#!"><i class="material-icons amber-text text-darken-2">receipt</i>Preguntas Frecuentes</a>
+		</li>
+		<li>
+			<a href="home.html"><i class="material-icons amber-text text-darken-2">trending_flat</i>Home</a>
+		</li>
+	</ul>
+        
+	<!-- CDN JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- CDN Materialize JS-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+	<!-- main.js -->
+	<script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+</html>
